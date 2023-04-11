@@ -1,4 +1,4 @@
-package ru.tinkoff.edu.java.linkParser;
+package arsi.backend;
 
 import org.junit.Assert;
 import org.junit.Test;
