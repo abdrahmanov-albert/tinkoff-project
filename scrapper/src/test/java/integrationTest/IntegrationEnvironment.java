@@ -1,5 +1,5 @@
 
-package IntegrationTest;
+package integrationTest;
 
 
 import liquibase.Contexts;
