@@ -1,7 +1,7 @@
 package ru.tinkoff.edu.java.scrapper.clients;
 
 import org.springframework.web.reactive.function.client.WebClient;
-import ru.tinkoff.edu.java.scrapper.DTO.GitHubResponse;
+import ru.tinkoff.edu.java.scrapper.dto.GitHubResponse;
 
 public class GitHubClient {
 

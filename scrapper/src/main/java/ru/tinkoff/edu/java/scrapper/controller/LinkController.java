@@ -2,10 +2,10 @@ package ru.tinkoff.edu.java.scrapper.controller;
 
 
 import org.springframework.web.bind.annotation.*;
-import ru.tinkoff.edu.java.scrapper.DTO.AddLinkRequest;
-import ru.tinkoff.edu.java.scrapper.DTO.LinkResponse;
-import ru.tinkoff.edu.java.scrapper.DTO.ListLinkResponse;
-import ru.tinkoff.edu.java.scrapper.DTO.RemoveLinkRequest;
+import ru.tinkoff.edu.java.scrapper.dto.AddLinkRequest;
+import ru.tinkoff.edu.java.scrapper.dto.LinkResponse;
+import ru.tinkoff.edu.java.scrapper.dto.ListLinkResponse;
+import ru.tinkoff.edu.java.scrapper.dto.RemoveLinkRequest;
 import ru.tinkoff.edu.java.scrapper.Model.Link;
 import ru.tinkoff.edu.java.scrapper.services.LinkService;
 
