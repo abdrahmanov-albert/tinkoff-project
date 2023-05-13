@@ -1,8 +1,8 @@
 package ru.tinkoff.edu.java.scrapper.clients;
 
 import org.springframework.web.reactive.function.client.WebClient;
-import ru.tinkoff.edu.java.scrapper.dto.StackOverflowQuestion;
-import ru.tinkoff.edu.java.scrapper.dto.StackOverflowResponse;
+import ru.tinkoff.edu.java.scrapper.DTO.StackOverflowQuestion;
+import ru.tinkoff.edu.java.scrapper.DTO.StackOverflowResponse;
 
 public class StackOverflowClient {
     private final WebClient webClient;

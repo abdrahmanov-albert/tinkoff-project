@@ -1,6 +1,5 @@
-package IntegrationTest.jdbc;
+package IntegrationTest.Jpa;
 
-import IntegrationTest.IntegrationEnvironment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,14 +7,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 import ru.tinkoff.edu.java.scrapper.Model.ChatLink;
-import ru.tinkoff.edu.java.scrapper.Model.Link;
+import ru.tinkoff.edu.java.scrapper.Model.Jpa.ChatLinkJpa;
 import ru.tinkoff.edu.java.scrapper.repository.ChatLinkJdbcRepository;
+import ru.tinkoff.edu.java.scrapper.repository.Jpa.ChatLinkRepositoryJpa;
 import ru.tinkoff.edu.java.scrapper.repository.mapper.ChatLinkMapper;
 
-import java.sql.Timestamp;
 import java.util.List;
 
-public class ChatLinkJdbcRepositoryTest extends IntegrationEnvironment {
+public class ChatLinkRepositoryTest {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -24,7 +23,7 @@ public class ChatLinkJdbcRepositoryTest extends IntegrationEnvironment {
     private ChatLinkMapper chatLinkMapper;
 
     @Autowired
-    private ChatLinkJdbcRepository chatLinkJdbcRepository;
+    private ChatLinkRepositoryJpa chatLinkJpaRepository;
 
 
     @Test
@@ -32,7 +31,7 @@ public class ChatLinkJdbcRepositoryTest extends IntegrationEnvironment {
     @Rollback
     public void addTest(){
         ChatLink chatLink = new ChatLink(1L, 1L);
-        chatLinkJdbcRepository.add(chatLink);
+        chatLinkJpaRepository.add(chatLink);
         List<ChatLink> chatLinks = jdbcTemplate.query("select * from chat_link", chatLinkMapper);
         Assertions.assertEquals(chatLink, chatLinks.get(0));
     }
@@ -46,7 +45,7 @@ public class ChatLinkJdbcRepositoryTest extends IntegrationEnvironment {
         jdbcTemplate.update("insert into chat_link (chat_id, link_id) VALUES (?,?)",
                 chatLink.getChat_id(), chatLink.getLink_id());
         List<ChatLink> chatLinks = jdbcTemplate.query("select * from chat_link", chatLinkMapper);
-        chatLinkJdbcRepository.remove(chatLink);
+        chatLinkJpaRepository.remove(chatLink);
         List<ChatLink> chatLinks1 = jdbcTemplate.query("select * from chat_link", chatLinkMapper);
         Assertions.assertEquals(chatLinks.size(), 1);
         Assertions.assertEquals(chatLinks1.size(), 0);
@@ -59,7 +58,7 @@ public class ChatLinkJdbcRepositoryTest extends IntegrationEnvironment {
         ChatLink chatLink = new ChatLink(1L, 1L);
         jdbcTemplate.update("insert into chat_link (chat_id, link_id) VALUES (?,?)",
                 chatLink.getChat_id(), chatLink.getLink_id());
-        List<ChatLink> chatLinks = chatLinkJdbcRepository.findAll();
+        List<ChatLinkJpa> chatLinks = chatLinkJpaRepository.findAll();
         Assertions.assertEquals(chatLink, chatLinks.get(0));
     }
 }
