@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>ru.tinkoff.edu</groupId>
-        <artifactId>tinkoff-app</artifactId>
+        <artifactId>tinkoff-project</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>link-parser</artifactId>
@@ -28,7 +28,15 @@
         <version>5.2.0</version>
         <scope>test</scope>
     </dependency>
-</dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+    </dependencies>
 
 
 
