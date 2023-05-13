@@ -54,9 +54,9 @@ public class LinkJpaRepositoryTest {
     public void findAllTest(){
         Link link = new Link("https://stackoverflow.com/questions/69218585/what-are-sealed-classes-in-java-17",
                 new Timestamp(System.currentTimeMillis()));
-        List<LinkJpa> links = linkJpaRepository.findAll();
+        List<Link> links = linkJpaRepository.findAll();
         jdbcTemplate.update("insert into link (url, update) values (?,?)", link.getUrl(), link.getUpdate());
-        List<LinkJpa> links1 = linkJpaRepository.findAll();
+        List<Link> links1 = linkJpaRepository.findAll();
         Assertions.assertEquals(links1.size(), 1);
         Assertions.assertEquals(links.size(), 0);
     }
