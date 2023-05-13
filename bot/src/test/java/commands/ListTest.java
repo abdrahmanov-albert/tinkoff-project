@@ -10,7 +10,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import ru.tinkoff.edu.java.bot.dto.ListLinkResponse;
+import ru.tinkoff.edu.java.bot.DTO.ListLinkResponse;
 import ru.tinkoff.edu.java.bot.Model.Link;
 import ru.tinkoff.edu.java.bot.clients.LinkClient;
 import ru.tinkoff.edu.java.bot.telegram.command.ListCommand;

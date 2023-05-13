@@ -1,4 +1,4 @@
-package ru.tinkoff.edu.java.bot.dto;
+package ru.tinkoff.edu.java.bot.DTO;
 
 import ru.tinkoff.edu.java.bot.Model.Link;
 
