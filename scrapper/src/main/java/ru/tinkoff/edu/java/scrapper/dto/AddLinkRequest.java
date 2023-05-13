@@ -1,3 +1,3 @@
-package ru.tinkoff.edu.java.scrapper.dto;
+package ru.tinkoff.edu.java.scrapper.DTO;
 
 public record AddLinkRequest(String url) {}
