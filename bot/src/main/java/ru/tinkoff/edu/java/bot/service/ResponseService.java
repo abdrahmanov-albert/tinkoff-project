@@ -12,28 +12,28 @@ public class ResponseService {
 
     public String startResponse(User user, Long ctx){
 
-        return "Welcome\uD83D\uDE24";
+        return "Старт";
     }
 
     public String trackResponse(User user, String secondArg){
         if(user!=null)
             if (user.links!=null) {
                 user.links.add(secondArg);
-                return "Link succefully added";
+                return "Добавлено";
         }
-        return "Press /start";
+        return "Нажми /start";
 
     }
 
     public String untrackResponse(User user, Long ctx){
         if(user!=null&&user.links!=null)
-            return "Untracked";
-        return "Link succefully added";
+            return "Удалено";
+        return "Добавлено";
     }
 
     public String listResponse(User user, Long ctx){
         if(user!=null)
-            return "The command 'list' was used. Links: " + user.links.toString();
-        return "The command 'list' was used. There is no links";
+            return "Ссылки: " + user.links.toString();
+        return "Нет ссылок";
     }
 }

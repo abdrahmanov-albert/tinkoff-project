@@ -56,7 +56,7 @@ public class TinkoffBot extends AbilityBot {
                 .name("help")
                 .locality(ALL)
                 .privacy(PUBLIC)
-                .action(ctx -> silent.send("/track + link - will set your link\n/untrack - unset\n/list - get your all links", ctx.chatId()))
+                .action(ctx -> silent.send("/track + ссылка добавляет в список\n/untrack - удаляет\n/list - список ссылок", ctx.chatId()))
                 .build();
     }
     public Ability trackCommand() {
@@ -76,7 +76,7 @@ public class TinkoffBot extends AbilityBot {
                 .name("untrack")
                 .locality(ALL)
                 .privacy(PUBLIC)
-                .action(ctx -> {silent.send("Ohhh... no... The command 'untrack' was used!", ctx.chatId());
+                .action(ctx -> {silent.send("не работает", ctx.chatId());
                     //todo сделать реализацию
                 })
                 .build();
